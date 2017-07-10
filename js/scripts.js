@@ -1,10 +1,21 @@
-$(document).ready(function () {
-  $("form#formletter").submit(function(event) {
-    var firstNameInput = $("input#firstName").val();
-    var lastNameInput = $("input#lastName").val();
+$(document).ready(function() {
+  $("form").submit(function(event) {
 
-    $(".letter .firstName").text(firstNameInput);
-    $(".letter .lastName").text(lastNameInput);
+
+    alert("hi");
+    var inputIds = ["firstName","lastName"];
+    inputIds.forEach(function(inputId){
+      alert (inputId);
+      inputValue = $("input#" + inputId).val();
+      alert (inputValue);
+      $(".letter ." + inputId).text(inputValue);
+    });
+
+    var iceCreams = ["vanilla", "chocolate", "mintchip", "cookiedough"];
+    iceCreams.forEach(function(iceCream) {
+        $(".flavors").append(iceCream + "\r\n");
+    });
+
 
     $(".letter").show();
 
