@@ -1,34 +1,38 @@
 $(document).ready(function() {
   $("form").submit(function(event) {
     alert("hi");
-    var inputIds = ["firstName","lastName"];
+
+    var inputIds = ["dairy", "meat", "vegitables"];//this creates an array of user inputs
+    var inputValues = [];//this turns the inputs into values
+
     inputIds.forEach(function(inputId){
       inputValue = $("input#" + inputId).val();
-      $(".letter ." + inputId).text(inputValue);
+      alert(inputValue);
+      inputValues.push(inputValue);
     });
-
-    var iceCreams = ["vanilla", "chocolate", "mintchip", "cookiedough"];
-    iceCreams.forEach(function(iceCream) {
-        $(".flavors").append(iceCream + "\r\n");
+    var sortedInputValues = inputValues.sort();
+    alert(inputValues);
+    var sortedInputValues = sortedInputValues.map(function(sortedUpper){
+      return sortedUpper.toUpperCase();
     });
-    var numbers = [1, 2, 3, 4, 5, 6];
-    var numbersPlusOne = numbers.map(function(number){
-        return number + 1;
-    });
-    alert(numbers);
-    alert(numbersPlusOne);
+    alert(sortedInputValues);
+    alert(sortedUpper);
 
-    var words = ["happy","sad","frustrated","excited"];
-    var wordsUpper = words.map(function(word){
-      return word.toUpperCase();
-    });
-    alert(words);
-    alert(wordsUpper);
+//     var newList = sortedUpper;
+//       $(".newList").append(newList + "\r\n");
+// alert(whew);
 
 
 
+// need to debug from here
+    // var inputValues = sortedInputValues.map(function(sortedInputValue){
+    //   return sortedInputValue.toUpperCase();
+    // });
+alert(now);
+    // inputValueUpper.foreach(function(inputValueUpper){
+    //   $("#newList ul").append(inputValueUpper);
+    // });
     $(".letter").show();
-
     event.preventDefault();
   });
 });
